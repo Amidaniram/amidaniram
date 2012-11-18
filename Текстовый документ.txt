@@ -28,3 +28,4 @@
 //create table logs (id bigint auto_increment primary key, `name` varchar(100));
 //select * from logs;
 //INSERT INTO logs (`name`) VALUES ("Petrov");
+нкнкн
