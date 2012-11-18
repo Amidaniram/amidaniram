@@ -1,0 +1,30 @@
+<?php
+
+	$name = $_REQUEST["name"];
+	print 'Hello, mr.'.$name.'!';
+	logEntry($name);
+
+	if(isset($_REQUEST["btn2"])){
+
+	}else if(isset($_REQUEST["btn3"])){
+
+	}
+
+	function logEntry($name){
+		$dbo = new mysqli("localhost", "root", "", "people");
+		if(mysqli_connect_errno()){
+			print 'Error: '.mysqli_connect_error();
+			return;
+		}
+
+		$cmd = 'INSERT INTO logs (`name`) VALUES ("'.$name.'")';
+		$dbo->query($cmd);
+
+		$dbo->close();
+	}
+
+//create database people;
+//use people;
+//create table logs (id bigint auto_increment primary key, `name` varchar(100));
+//select * from logs;
+//INSERT INTO logs (`name`) VALUES ("Petrov");
